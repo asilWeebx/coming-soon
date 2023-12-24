@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Anim Coming Soon Responsive Template</title>
+		<meta name="description" content="Examples for creative website header animations using Canvas and JavaScript" />
+		<meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
+		<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+	</head>
+	<body>
+
+<body id="home">
+<div id="large-header" class="large-header">
+					<canvas id="demo-canvas"></canvas>
+</div>
+<div id="Content" class="wrapper">
+<div class="top-wrapper">
+<div id="header">
+<div class="wrapper">
+	<h1><a href="#" class="logo">Coming</a></h1>
+	<h1><a href="#" class="logo1">Soon</a></h1>
+	</div>
+</div>
+<div class="countdown styled"></div>
+
+</div>
+<div class="bottom-wrapper">
+<h2 class="intro">asilbek-yuldashev's blog will be launched soon</h2>
+<div id="subscribe">
+	<form id="emailForm">
+		<p class="subscribe-input"><input type="email" id="email" name="email" size="20" value="Subscribe your e-mail"><input type="submit" value="Submit" onclick="submitEmail()" name="Submit"></p>
+	</form>
+</div>
+</div>
+</div>
+
+<script src="js/TweenLite.min.js"></script>
+<script src="js/EasePack.min.js"></script>
+<script src="js/rAF.js"></script>
+<script src="js/demo-1.js"></script>
+
+
+<!--Scripts-->
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/Backstretch.js"></script>
+<script type="text/javascript" src="js/jquery.countdown.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script>function submitEmail() {
+    const email = document.getElementById('email').value;
+
+    fetch('http://localhost:8000/api/create/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ "email": email }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+        alert('Email submitted successfully please wait answer!');
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        alert('Error submitting email please try again!');
+    });
+}
+
+
+</script>
+	</body>
+</html>
