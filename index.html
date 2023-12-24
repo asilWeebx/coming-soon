@@ -57,7 +57,7 @@
 <script>function submitEmail() {
     const email = document.getElementById('email').value;
 
-    fetch('https://comingsoonapi.pythonanywhere.com/', {
+    fetch('https://comingsoonapi.pythonanywhere.com/api/create/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
